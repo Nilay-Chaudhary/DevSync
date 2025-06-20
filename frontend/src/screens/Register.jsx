@@ -28,41 +28,52 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-900">
-            <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-                <h2 className="text-2xl font-bold text-white mb-6">Register</h2>
-                <form
-                    onSubmit={submitHandler}
-                >
-                    <div className="mb-4">
-                        <label className="block text-gray-400 mb-2" htmlFor="email">Email</label>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-indigo-200 px-4">
+            <div className="bg-white p-8 sm:p-10 rounded-2xl shadow-xl w-full max-w-md border border-gray-100">
+                <h2 className="text-3xl font-bold text-indigo-700 mb-6 text-center">Create your DevSync account</h2>
+
+                <form onSubmit={submitHandler}>
+                    <div className="mb-5">
+                        <label htmlFor="email" className="block text-sm text-gray-600 mb-2">
+                            Email
+                        </label>
                         <input
-                            onChange={(e) => setEmail(e.target.value)}
                             type="email"
                             id="email"
-                            className="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter your email"
+                            placeholder="you@example.com"
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full px-4 py-3 rounded-lg bg-gray-100 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                            required
                         />
                     </div>
+
                     <div className="mb-6">
-                        <label className="block text-gray-400 mb-2" htmlFor="password">Password</label>
+                        <label htmlFor="password" className="block text-sm text-gray-600 mb-2">
+                            Password
+                        </label>
                         <input
-                            onChange={(e) => setPassword(e.target.value)}
                             type="password"
                             id="password"
-                            className="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter your password"
+                            placeholder="••••••••"
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="w-full px-4 py-3 rounded-lg bg-gray-100 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                            required
                         />
                     </div>
+
                     <button
                         type="submit"
-                        className="w-full p-3 rounded bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition duration-200 shadow-md"
                     >
                         Register
                     </button>
                 </form>
-                <p className="text-gray-400 mt-4">
-                    Already have an account? <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
+
+                <p className="text-sm text-gray-500 mt-6 text-center">
+                    Already have an account?{" "}
+                    <Link to="/login" className="text-indigo-600 hover:underline font-medium">
+                        Login
+                    </Link>
                 </p>
             </div>
         </div>
